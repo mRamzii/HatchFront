@@ -10,6 +10,9 @@ export default new Vuex.Store({
     mutations: {
         logUser(state) {
             state.isUserLoggedIn = true
+        },
+        logoutUser(state) {
+            state.isUserLoggedIn = false
         }
     }
 })

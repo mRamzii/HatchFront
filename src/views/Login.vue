@@ -36,7 +36,10 @@
   </div>
 </template>
 <script>
+
 import { Card, Button, FormGroupInput } from "@/components";
+import store from "@/store"
+
 export default {
   name: "login-page",
   bodyClass: "login-page",
@@ -46,7 +49,7 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
   },
   mounted: function() {
-    this.$emit("finishedLoading");
+    store.commit("logoutUser");
   },
   computed: {
     getAuthenticateUrl() {
