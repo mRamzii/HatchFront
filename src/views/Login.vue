@@ -18,11 +18,12 @@
 
         <template slot="raw-content">
           <div class="card-footer text-center mt-0">
+            <router-link :to="getAuthenticateUrl">
             <a
-              :href="getAuthenticateUrl"
               class="btn btn-warning btn-round btn-lg btn-block"
               >Join the class!</a
             >
+            </router-link>
           </div>
           <div class="">
             <h6>
