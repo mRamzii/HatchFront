@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "Authenticate",
   computed: {
@@ -13,10 +15,14 @@ export default {
     },
   },
   mounted: function () {
-    this.$emit("startedLoading")
-    setTimeout(function() {
-        this.$emit("finishedLoading")
-    }.bind(this), 200)
+    axios.get(`http://jsonplaceholder.typicode.com/posts`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      console.log(response.data)
+    })
+    .catch(e => {
+      console.log(e)
+    })
   },
 };
 </script>
