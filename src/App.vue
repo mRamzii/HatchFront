@@ -1,8 +1,41 @@
 <template>
   <div id="app">
-    <router-view />
+    <div class="page-header clear-filter" filter-color="orange">
+      <div
+        class="page-header-image"
+        style="background-image: url('https://i.redd.it/eklxnrkel8t41.jpg')"
+      ></div>
+      <div class="content">
+        <router-view
+          @startedLoading="toggleLoading(true)"
+          @finishedLoading="toggleLoading(false)"
+        />
+      </div>
+      <main-footer></main-footer>
+    </div>
   </div>
 </template>
+
+<script>
+import MainFooter from "@/layout/MainFooter";
+
+export default {
+  name: "App",
+  components: {
+    MainFooter,
+  },
+  data() {
+    return {
+      isLoading: false,
+    };
+  },
+  methods: {
+    toggleLoading(boolean) {
+      this.isLoading = boolean;
+    },
+  },
+};
+</script>
 
 <style>
 #app {

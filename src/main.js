@@ -9,8 +9,9 @@ import '@/assets/demo/demo.css';
 
 Vue.config.productionTip = false;
 
+/* eslint-disable-line no-new */
 new Vue({
     router,
     store,
     render: h => h(App)
-}).$mount("#app");
+}).$mount('#app');
