@@ -8,5 +8,8 @@ module.exports = {
                 'sass-loader'
             ]
         }]
+    },
+    devServer: {
+        disableHostCheck: true
     }
 }
