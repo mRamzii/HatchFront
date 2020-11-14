@@ -4,6 +4,8 @@
     :class="{ [`footer-${type}`]: type }"
     :data-background-color="backgroundColor"
   >
+  <Dock 
+  />
     <div class="container">
       <nav>
         <ul>
@@ -36,7 +38,13 @@
   </footer>
 </template>
 <script>
+
+import Dock from "@/components/Hatch/Dock.vue"
+
+
 export default {
+
+
   props: {
     backgroundColor: String,
     type: String
@@ -45,6 +53,9 @@ export default {
     return {
       year: new Date().getFullYear()
     };
+  },
+  components: {
+    Dock
   }
 };
 </script>

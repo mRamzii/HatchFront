@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 
 import Login from "@/views/Login.vue";
 import Authenticate from "@/views/Authenticate.vue"
+import Dashboard from "@/views/Dashboard.vue"
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes = [{
         path: "/authenticate/:token",
         name: "Authenticate",
         component: Authenticate
+    },
+    {
+        path: "/dashboard",
+        name: "Dashboard",
+        component: Dashboard
     }
 ];
 
