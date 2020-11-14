@@ -11,7 +11,10 @@
           @finishedLoading="toggleLoading(false)"
         />
       </div>
-      <main-footer></main-footer>
+      <main-footer
+        :showDock="showDock"
+      >
+      </main-footer>
     </div>
   </div>
 </template>
@@ -19,8 +22,11 @@
 <script>
 import MainFooter from "@/layout/MainFooter";
 
+import store from "@/store"
+
 export default {
   name: "App",
+  store,
   components: {
     MainFooter,
   },
@@ -28,6 +34,11 @@ export default {
     return {
       isLoading: false,
     };
+  },
+  computed: {
+    showDock: function() {
+      return store.state.isUserLoggedIn
+    }
   },
   methods: {
     toggleLoading(boolean) {

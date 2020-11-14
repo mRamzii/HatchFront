@@ -80,7 +80,7 @@ export default {
 <style scoped>
 #dock-container {
   position: fixed;
-  top: calc(100vh - 130px);
+  top: calc(100vh - 200px);
   right: 3vw;
   text-align: center;
   width: 100%;
@@ -133,7 +133,7 @@ export default {
 #dock li span {
   display: none;
   position: absolute;
-  bottom: 140px;
+  bottom: 260px;
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
@@ -146,8 +146,8 @@ export default {
   display: block;
 }
 #dock li img {
-  width: 64px;
-  height: 64px;
+  width: 130px;
+  height: 130px;
   margin-bottom: 10px;
   -webkit-box-reflect: below 2px;
   -webkit-box-reflect: below 2px -webkit-linear-gradient(top, transparent, rgba(255, 255, 255, 0.3));

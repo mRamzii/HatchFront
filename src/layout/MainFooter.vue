@@ -5,7 +5,7 @@
     :data-background-color="backgroundColor"
   >
   <Dock 
-    v-if="userIsLoggedIn"
+    v-if="showDock"
   />
     <div class="container">
       <nav>
@@ -49,11 +49,14 @@ export default {
   props: {
     backgroundColor: String,
     type: String,
+    showDock: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
       year: new Date().getFullYear(),
-      userIsLoggedIn: true
     };
   },
   components: {
