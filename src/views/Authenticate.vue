@@ -1,6 +1,16 @@
 <template>
     <div>
-      {{ getAccessToken }}
+      <div class="col-12 border rounded">
+
+        Your access token: {{getAccessToken}}
+      
+      </div>
+      <router-link to="/dashboard">
+            <a
+              class="btn btn-warning btn-round col-4"
+              >Login</a
+            >
+      </router-link>
     </div>
 </template>
 
