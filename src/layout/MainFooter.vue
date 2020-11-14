@@ -24,11 +24,11 @@
         <a href="" target="_blank" rel="noopener"
           >Toto</a
         >. Coded by
-        <a href="https://binarcode.com" target="_blank" rel="noopener"
+        <a href="" target="_blank" rel="noopener"
           >ShellScript</a
         >
         and
-        <a href="https://www.creative-tim.com" target="_blank" rel="noopener"
+        <a href="" target="_blank" rel="noopener"
           >Timd</a
         >.
       </div>
