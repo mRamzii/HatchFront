@@ -10,21 +10,31 @@ Authentication component
 
     <div>
 
-        <div class="col-12 border rounded">
+        <Loading
+            v-if="loading"
+        />
 
-            Your access token: {{ getAccessToken }}
+        <template
+            v-if="!loading"
+        >
 
-        </div>
+            <div
+                v-if="!isTokenValid"
+            >
 
-        <router-link to="/dashboard">
+                The token you provided is not valid.
 
-            <a class="btn btn-warning btn-round col-4">
+            </div>
 
-                Login
+            <div
+                v-else
+            >
 
-            </a>
+                Redirecting...
 
-        </router-link>
+            </div>
+
+        </template>
 
     </div>
 
@@ -38,16 +48,25 @@ Authentication component
 
 import axios from "axios"
 
+import Loading from "@/components/Utils/Loading.vue"
+
 //-------------------------------------
 
 export default {
     name: "Authenticate",
+    data() {
+        return {
+            isTokenValid: false,
+            loading: true,
+            user: []
+        }
+    },
     computed: {
-        getAccessToken: function () {
+        getAccessToken: function() {
             return this.$router.currentRoute.params.token
         },
     },
-    mounted: function () {
+    mounted: function() {
         let request = {
             token: this.$router.currentRoute.params.token,
         }
@@ -60,13 +79,23 @@ export default {
                 },
             })
             .then((response) => {
-                // JSON responses are automatically parsed.
-                console.log(response.data)
+                if (response.data.status === "success") {
+                    this.isTokenValid = true
+                    this.user = response.data
+                } else {
+                    this.isTokenValid = false
+                }
             })
             .catch((e) => {
                 console.log(e)
             })
+            .finally(() => {
+                this.loading = false
+            })
     },
+    components: {
+        Loading
+    }
 }
 </script>
 
@@ -74,7 +103,8 @@ export default {
 <!-- ======================================================================= -->
 
 
-<style>
+<style scoped>
+
 </style>
 
 
