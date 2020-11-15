@@ -1,36 +1,36 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Vuex from 'vuex'
+import Vue from "vue"
+import VueRouter from "vue-router"
+import Vuex from "vuex"
 
-import Login from "@/views/Login.vue";
+import Login from "@/views/Login.vue"
 import Dashboard from "@/views/Dashboard.vue"
+import Authenticate from "@/views/Authenticate.vue"
 
-Vue.use(VueRouter);
-Vue.use(Vuex);
+Vue.use(VueRouter)
+Vue.use(Vuex)
 
-
-const routes = [{
+const routes = [
+    {
         path: "/",
         name: "Home",
-        component: Login
+        component: Login,
     },
     {
         path: "/authenticate/:token",
         name: "Authenticate",
-        component: () =>
-            import ( /* webpackChunkName: "about" */ "@/views/Authenticate.vue")
+        component: Authenticate,
     },
     {
         path: "/dashboard",
         name: "Dashboard",
-        component: Dashboard
-    }
-];
+        component: Dashboard,
+    },
+]
 
 const router = new VueRouter({
     mode: "hash",
     base: process.env.VUE_APP_BASEURL,
-    routes
-});
+    routes,
+})
 
-export default router;
+export default router
