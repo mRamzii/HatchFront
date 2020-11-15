@@ -3,7 +3,6 @@ import VueRouter from "vue-router";
 import Vuex from 'vuex'
 
 import Login from "@/views/Login.vue";
-import Authenticate from "@/views/Authenticate.vue"
 import Dashboard from "@/views/Dashboard.vue"
 
 Vue.use(VueRouter);
@@ -18,7 +17,8 @@ const routes = [{
     {
         path: "/authenticate/:token",
         name: "Authenticate",
-        component: Authenticate
+        component: () =>
+            import ( /* webpackChunkName: "about" */ "@/views/Authenticate.vue")
     },
     {
         path: "/dashboard",
@@ -28,8 +28,8 @@ const routes = [{
 ];
 
 const router = new VueRouter({
-    mode: "history",
-    base: process.env.BASE_URL,
+    mode: "hash",
+    base: process.env.VUE_APP_BASEURL,
     routes
 });
 

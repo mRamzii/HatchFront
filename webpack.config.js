@@ -9,5 +9,10 @@ module.exports = {
             ]
         }]
     },
-    disableHostCheck: config.dev.disableHostCheck
+    disableHostCheck: config.dev.disableHostCheck,
+    devServer: {
+        proxy: 'http://localhost:3000',
+        ws: true,
+        changeOrigin: true
+    }
 }

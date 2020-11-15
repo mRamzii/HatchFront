@@ -25,7 +25,17 @@ export default {
     },
   },
   mounted: function () {
-    axios.get(`http://jsonplaceholder.typicode.com/posts`)
+
+    let request = {
+      token: this.$router.currentRoute.params.token
+    }
+
+    axios.post(process.env.VUE_APP_APIURL + "auth/authenticate/", request, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-type': 'application/json'
+      }
+    })
     .then(response => {
       // JSON responses are automatically parsed.
       console.log(response.data)
