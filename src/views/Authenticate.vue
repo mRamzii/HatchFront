@@ -8,10 +8,11 @@ Authentication component
 
 <template>
 
-    <div>
+    <div class="d-flex">
 
         <Loading
             v-if="loading"
+            class="col-12"
         />
 
         <template

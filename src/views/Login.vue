@@ -52,12 +52,15 @@ Home(Login) component
                             :to="getAuthenticateUrl"
                         >
 
-                            <a
-                                class="btn btn-warning btn-round btn-lg btn-block">
+                            <button
+                                class="btn btn-warning btn-round btn-lg btn-block"
+                                :disabled="userToken === ''"
+                                @click="verifyUserInput"
+                            >
 
                                 Join the class!
 
-                            </a>
+                            </button>
 
                         </router-link>
 
@@ -122,6 +125,15 @@ export default {
             ready: false,
         }
     },
+    methods: {
+        verifyUserInput() {
+            if (this.userToken !== "") {
+
+            } else {
+
+            }
+        }
+    }
 }
 </script>
 

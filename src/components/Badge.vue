@@ -20,7 +20,7 @@ export default {
         type: {
             type: String,
             default: "default",
-            validator: (value) => {
+            validator: value => {
                 let acceptedValues = [
                     "primary",
                     "info",
