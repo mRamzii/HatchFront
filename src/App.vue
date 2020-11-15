@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div class="page-header clear-filter" filter-color="orange">
+        <div class="page-header clear-filter d-flex justify-content-center " filter-color="orange">
             <template v-if="isUserLoggedIn">
                 <div class="d-flex justify-content-start row">
                     <img
@@ -19,7 +19,7 @@
                 style="background-image: url('https://i.redd.it/eklxnrkel8t41.jpg')"
             ></div>
 
-            <div class="content">
+            <div class="content d-flex align-items-center">
                 <router-view
                     @startedLoading="toggleLoading(true)"
                     @finishedLoading="toggleLoading(false)"

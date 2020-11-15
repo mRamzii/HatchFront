@@ -8,11 +8,10 @@ Authentication component
 
 <template>
 
-    <div class="d-flex">
+    <div class="container-fluid">
 
         <Loading
             v-if="loading"
-            class="col-12"
         />
 
         <template
@@ -20,15 +19,7 @@ Authentication component
         >
 
             <div
-                v-if="!isTokenValid"
-            >
-
-                The token you provided is not valid.
-
-            </div>
-
-            <div
-                v-else
+                v-if="isTokenValid"
             >
 
                 Redirecting...

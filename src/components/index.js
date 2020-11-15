@@ -18,7 +18,6 @@ import NavbarToggleButton from "./Navbar/NavbarToggleButton"
 import TabPane from "./Tabs/Tab.vue"
 import Tabs from "./Tabs/Tabs.vue"
 import Modal from "./Modal.vue"
-import Parallax from "./Parallax.vue"
 import Slider from "./Slider.vue"
 
 import Pagination from "./Pagination.vue"
@@ -42,7 +41,6 @@ export {
     TabPane,
     Tabs,
     Modal,
-    Parallax,
     Slider,
     Button,
 }

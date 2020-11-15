@@ -23,10 +23,11 @@ Home(Login) component
 
                 <div
                     slot="header"
-                    class="logo-container"
+                    class="logo-container mt-5"
                 >
 
                     <img
+                        class="hatch-logo"
                         src="https://cdn3.iconfinder.com/data/icons/summer-season-3/64/Artboard_15-512.png"
                     />
 
@@ -140,9 +141,7 @@ export default {
 
 
 <style scoped>
-.content {
-    margin-top: 15vh !important;
-}
+
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 1s;
@@ -150,7 +149,12 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
 }
+
+.hatch-logo {
+    width: 100vw
+}
 </style>
+
 
 <!-- ======================================================================= -->
 <!-- End of file -->
