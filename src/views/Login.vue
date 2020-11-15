@@ -54,8 +54,7 @@ Home(Login) component
 
                             <button
                                 class="btn btn-warning btn-round btn-lg btn-block"
-                                :disabled="userToken === ''"
-                                @click="verifyUserInput"
+                                v-if="userToken !== ''"
                             >
 
                                 Join the class!
@@ -113,6 +112,9 @@ export default {
     },
     mounted: function() {
         store.commit("logoutUser")
+        if (this.$router.currentRoute.params.invalid === true) {
+            this.showError()
+        }
     },
     computed: {
         getAuthenticateUrl() {
@@ -126,12 +128,8 @@ export default {
         }
     },
     methods: {
-        verifyUserInput() {
-            if (this.userToken !== "") {
-
-            } else {
-
-            }
+        showError() {
+            this.$noty.error("Your access token is invalid, please ask your teacher")
         }
     }
 }

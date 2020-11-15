@@ -84,11 +84,12 @@ export default {
                     this.isTokenValid = true
                     this.user = response.data
                 } else {
+                    this.$router.push({ name: "Home", params: { invalid: true } })
                     this.isTokenValid = false
                 }
             })
             .catch((e) => {
-                console.log(e)
+                this.$router.push({ name: "Home", params: { invalid: true } })
             })
             .finally(() => {
                 this.loading = false

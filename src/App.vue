@@ -32,7 +32,6 @@
 
 <script>
 import MainFooter from "@/layout/MainFooter"
-
 import store from "@/store"
 
 export default {

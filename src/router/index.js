@@ -1,13 +1,11 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-import Vuex from "vuex"
 
 import Login from "@/views/Login.vue"
 import Dashboard from "@/views/Dashboard.vue"
 import Authenticate from "@/views/Authenticate.vue"
 
 Vue.use(VueRouter)
-Vue.use(Vuex)
 
 const routes = [
     {
