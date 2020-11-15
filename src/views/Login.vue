@@ -7,13 +7,29 @@ Home(Login) component
 ============================================================================ -->
 
 <template>
-    <div class="container">
-        <div class="col-md-5 ml-auto mr-auto">
-            <card type="login" plain>
-                <div slot="header" class="logo-container">
+
+    <div
+        class="container"
+    >
+
+        <div
+            class="col-md-5 ml-auto mr-auto"
+        >
+
+            <card
+                type="login"
+                plain
+            >
+
+                <div
+                    slot="header"
+                    class="logo-container"
+                >
+
                     <img
                         src="https://cdn3.iconfinder.com/data/icons/summer-season-3/64/Artboard_15-512.png"
                     />
+
                 </div>
 
                 <fg-input
@@ -24,26 +40,53 @@ Home(Login) component
                 >
                 </fg-input>
 
-                <template slot="raw-content">
-                    <div class="card-footer text-center mt-0">
-                        <router-link :to="getAuthenticateUrl">
+                <template
+                    slot="raw-content"
+                >
+
+                    <div
+                        class="card-footer text-center mt-0"
+                    >
+
+                        <router-link
+                            :to="getAuthenticateUrl"
+                        >
+
                             <a
-                                class="btn btn-warning btn-round btn-lg btn-block"
-                                >Join the class!</a
-                            >
+                                class="btn btn-warning btn-round btn-lg btn-block">
+
+                                Join the class!
+
+                            </a>
+
                         </router-link>
+
                     </div>
-                    <div class="">
+
+                    <div>
+
                         <h6>
-                            <a href="#pablo" class="link footer-link text-info"
-                                >Need Help?</a
+
+                            <a
+                                href="#pablo"
+                                class="link footer-link text-info"
                             >
+                                Need Help?
+
+                            </a>
+
                         </h6>
+
                     </div>
+
                 </template>
+
             </card>
+
         </div>
+
     </div>
+
 </template>
 
 <!-- ======================================================================= -->
@@ -52,6 +95,10 @@ Home(Login) component
 <script>
 import { Card, Button, FormGroupInput } from "@/components"
 import store from "@/store"
+
+
+//-------------------------------------
+
 
 export default {
     name: "login-page",
@@ -94,3 +141,7 @@ export default {
     opacity: 0;
 }
 </style>
+
+<!-- ======================================================================= -->
+<!-- End of file -->
+<!-- ======================================================================= -->

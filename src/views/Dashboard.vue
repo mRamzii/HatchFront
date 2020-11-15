@@ -7,7 +7,11 @@ Dashboard component
 ============================================================================ -->
 
 <template>
-    <div class="buddy">
+
+    <div
+        class="buddy"
+    >
+
         <lottie
             :options="defaultOptions"
             :height="300"
@@ -16,25 +20,47 @@ Dashboard component
             class="bird"
         />
 
-        <transition name="fade">
-            <div class="message" v-if="doneWithAnimation">Hey, I'm Buddy !</div>
+        <transition
+            name="fade"
+        >
+
+            <div
+                v-if="doneWithAnimation"
+                class="message"
+            >
+
+                Hey, I'm Buddy !
+
+            </div>
+
         </transition>
         <transition name="fade">
+
             <img
                 v-if="doneWithAnimation"
                 class="bubble"
                 src="https://i.pinimg.com/originals/35/1a/be/351abe5951e44ce84e27c8a5e9842a3f.png"
                 width="270px"
             />
+
         </transition>
+
     </div>
+
 </template>
 
+
+<!-- ======================================================================= -->
+
+
 <script>
-import store from "@/store"
 
 import Lottie from "vue-lottie"
+
+import store from "@/store"
 import * as animationData from "@/assets/animations/egg_hatch.json"
+
+//-------------------------------------
 
 export default {
     store,
@@ -68,6 +94,10 @@ export default {
     },
 }
 </script>
+
+
+<!-- ======================================================================= -->
+
 
 <style scoped>
 .buddy {
@@ -104,3 +134,7 @@ export default {
     opacity: 0;
 }
 </style>
+
+<!-- ======================================================================= -->
+<!-- End of file -->
+<!-- ======================================================================= -->

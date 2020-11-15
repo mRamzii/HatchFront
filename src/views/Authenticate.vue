@@ -38,9 +38,7 @@ Authentication component
 
 import axios from "axios"
 
-
 //-------------------------------------
-
 
 export default {
     name: "Authenticate",
